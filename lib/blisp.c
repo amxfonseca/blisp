@@ -240,7 +240,7 @@ blisp_return_t blisp_device_get_boot_info(struct blisp_device* device,
     return ret;
 
   memcpy(boot_info->boot_rom_version, &device->rx_buffer[0],
-         4);  // TODO: Endianess; this may break on big endian machines
+         4);  // TODO: Endianness; this may break on big endian machines
 
   if (device->chip->type == BLISP_CHIP_BL70X) {
     memcpy(boot_info->chip_id, &device->rx_buffer[16], 8);
